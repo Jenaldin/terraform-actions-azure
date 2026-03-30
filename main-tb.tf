@@ -9,6 +9,13 @@ terraform {
       version = "3.8.1"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "JenStorageRG"
+    storage_account_name = "taskboardstoragejen"
+    container_name       = "task-board-container-jen"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
